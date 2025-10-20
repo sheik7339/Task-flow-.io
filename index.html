@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow | Modern Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="app-card">
+        <!-- Header -->
+        <div class="app-header">
+          <div class="header-content">
+            <div class="header-icon">
+              <i class="fas fa-check-double"></i>
+            </div>
+            <div>
+              <h1>TaskFlow</h1>
+              <p id="date" class="current-date">Loading date...</p>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat-item">
+              <span class="stat-number" id="total-tasks">0</span>
+              <span class="stat-label">Total</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="completed-tasks">0</span>
+              <span class="stat-label">Done</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+          <div class="input-container">
+            <i class="fas fa-plus input-icon"></i>
+            <input 
+              type="text" 
+              id="task-input" 
+              placeholder="What needs to be done?" 
+              autocomplete="off"
+            />
+            <button id="add-task" class="add-btn" aria-label="Add task">
+              <i class="fas fa-paper-plane"></i>
+              <span class="sr-only">Add Task</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all" aria-label="Show all tasks">
+              <i class="fas fa-layer-group"></i>
+              All
+            </button>
+            <button class="filter-btn" data-filter="active" aria-label="Show active tasks">
+              <i class="fas fa-clock"></i>
+              Active
+            </button>
+            <button class="filter-btn" data-filter="completed" aria-label="Show completed tasks">
+              <i class="fas fa-check-circle"></i>
+              Completed
+            </button>
+          </div>
+        </div>
+
+        <!-- Todos List -->
+        <div class="todos-section">
+          <div class="todos-container">
+            <ul id="todos-list" class="todos-list">
+              <!-- Todos will be inserted here -->
+            </ul>
+            
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state">
+              <div class="empty-icon">
+                <i class="fas fa-tasks"></i>
+              </div>
+              <h3>No tasks yet</h3>
+              <p>Add your first task to get started!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="app-footer">
+          <div class="footer-content">
+            <span id="items-left" class="items-left">0 items left</span>
+            <button id="clear-completed" class="clear-btn" aria-label="Clear completed tasks">
+              <i class="fas fa-trash"></i>
+              Clear Completed
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
